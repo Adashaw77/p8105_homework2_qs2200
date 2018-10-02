@@ -144,3 +144,15 @@ There are 404 unique locations in this dataset.
 There are 51 states included in this dataset, so every states in United States is represented.
 
 The state "NJ" is observed the most, appeared 146 times.
+
+**3. In 2002, what is the median of the “Excellent” response value? Make a histogram of “Excellent” response values in the year 2002.**
+
+``` r
+brfss_2002 = filter(brfss, year == "2002") 
+
+ggplot(brfss_2002, aes(x = excellent))+ geom_histogram(fill = 'pink', alpha = 0.7)
+```
+
+![](p8105_homowork2_qs2200_files/figure-markdown_github/problem%203.3-1.png)
+
+In 2002, the median of the "Excellent" response value is 23.6.

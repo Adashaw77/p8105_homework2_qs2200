@@ -138,3 +138,14 @@ There are `r length(unique(brfss$locationdesc))` unique locations in this datase
 There are `r length(unique(brfss$locationabbr))` states included in this dataset, so every states in United States is represented.
 
 The state "`r max_freq$Var1`" is observed the most, appeared `r max_freq$Freq` times.
+
+**3. In 2002, what is the median of the “Excellent” response value? Make a histogram of “Excellent” response values in the year 2002.**
+
+```{r problem 3.3, message = FALSE, warning = FALSE}
+brfss_2002 = filter(brfss, year == "2002") 
+
+ggplot(brfss_2002, aes(x = excellent))+ geom_histogram(fill = 'pink', alpha = 0.7)
+
+```
+
+In 2002, the median of the "Excellent" response value is `r median(brfss_2002$excellent, na.rm = TRUE)`.
