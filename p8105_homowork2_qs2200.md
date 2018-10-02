@@ -156,3 +156,16 @@ ggplot(brfss_2002, aes(x = excellent))+ geom_histogram(fill = 'pink', alpha = 0.
 ![](p8105_homowork2_qs2200_files/figure-markdown_github/problem%203.3-1.png)
 
 In 2002, the median of the "Excellent" response value is 23.6.
+
+**4. Make a scatterplot showing the proportion of “Excellent” response values in New York County and Queens County (both in NY State) in each year from 2002 to 2010.**
+
+``` r
+brfss_nycqu = 
+  filter(brfss, locationdesc %in% c("NY - New York County", "NY - Queens County")) %>%
+  mutate(excellent_prop = excellent/(excellent + poor + fair + good))
+
+ggplot(brfss_nycqu, aes(x = year, y = excellent_prop ))+
+  geom_point()
+```
+
+![](p8105_homowork2_qs2200_files/figure-markdown_github/problem%203.4-1.png)
