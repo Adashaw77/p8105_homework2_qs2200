@@ -158,7 +158,7 @@ brfss_nycqu =
   mutate(excellent_prop = excellent/(excellent + poor + fair + good))
 
 ggplot(brfss_nycqu, aes(x = year, y = excellent_prop ))+
-  geom_point()
+  geom_point(aes(color = locationdesc))
 ```
 
 
