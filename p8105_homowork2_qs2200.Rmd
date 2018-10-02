@@ -1,0 +1,11 @@
+---
+title: "p8105_homework2_qs2200"
+author: "Qi Shao"
+date: "10/2/2018"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+
+```
+
