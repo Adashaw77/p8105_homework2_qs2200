@@ -80,3 +80,24 @@ mr_trash_wheel =
   na.omit(1) %>%
   mutate(sports_balls = as.integer(sports_balls))
 ```
+
+**2. Read and clean precipitation data for 2016 and 2017.**
+
+``` r
+precipitation_2016 = 
+  readxl::read_excel("./data/HealthyHarborWaterWheelTotals2017-9-26.xlsx", sheet = 4,  range = "A2:B14") %>%
+  janitor::clean_names() %>%
+  na.omit(2) %>%
+  mutate(year = "2016")
+
+precipitation_2017 = 
+  readxl::read_excel("./data/HealthyHarborWaterWheelTotals2017-9-26.xlsx", sheet = 3, range = "A2:B14") %>%
+  janitor::clean_names() %>%
+  na.omit(2) %>%
+  mutate(year = "2017")
+
+precip_data = 
+  bind_rows(precipitation_2016, precipitation_2017) %>%
+  mutate(month = (month.name[month])) %>%
+  select(year, everything())
+```
