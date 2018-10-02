@@ -115,3 +115,19 @@ The total precipitation in 2017 is 29.93.
 **5. What was the median number of sports balls in a dumpster in 2016?**
 
 The median number of sports balls in a dumbster in 2016 is 13.
+
+Problem 3
+=========
+
+**1. Import and tidy data.**
+
+``` r
+library(p8105.datasets)
+
+brfss = p8105.datasets::brfss_smart2010 %>%
+  filter(Topic == "Overall Health") %>%
+  select(-Class, -Topic, -Question, -Sample_Size, -Confidence_limit_Low:-GeoLocation) %>%
+  spread(key = Response, value = Data_value) %>%
+  janitor::clean_names() %>%
+  mutate(good_prop = (excellent + good)/(excellent + good +fair + poor))
+```
