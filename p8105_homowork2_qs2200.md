@@ -64,3 +64,5 @@ dis_refo_data = reformat_transit_data %>%
 There are 60 distinct stations serve the A train.
 
 -   Of the stations that serve the A train, how many are ADA compliant?
+
+Of all stations that serve the A train, 144 stations are ADA compliant.

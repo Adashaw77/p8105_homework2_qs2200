@@ -61,3 +61,5 @@ dis_refo_data = reformat_transit_data %>%
 There are `r sum(dis_refo_data$route_name == "A")` distinct stations serve the A train.
 
 * Of the stations that serve the A train, how many are ADA compliant?
+
+Of all stations that serve the A train, `r sum(dis_refo_data$route_name == "A", dis_refo_data$ada == TRUE)` stations are ADA compliant.
