@@ -101,3 +101,9 @@ precip_data =
   mutate(month = (month.name[month])) %>%
   select(year, everything())
 ```
+
+**3. Write a paragraph about these data.**
+
+The dataset `mr_trash_wheel` has 14 variables, and 201 observations of the dumbsters' trash.
+
+The dataset `precipitation_2016` and `precipitation_2017` separately include the precipitation data of 2016 and 2017 in each month. The combined dataset `precip_data` shows the precipitation every month in two years.

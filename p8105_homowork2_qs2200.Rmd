@@ -96,3 +96,8 @@ precip_data =
   select(year, everything())
 
 ```
+**3. Write a paragraph about these data.**
+
+The dataset `mr_trash_wheel` has `r ncol(mr_trash_wheel)` variables, and `r nrow(mr_trash_wheel)` observations of the dumbsters' trash.
+
+The dataset `precipitation_2016` and `precipitation_2017` separately include the precipitation data of 2016 and 2017 in each month. The combined dataset `precip_data` shows the precipitation every month in two years.
