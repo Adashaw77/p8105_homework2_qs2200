@@ -22,3 +22,22 @@ This dataset `transit_data` contains 19 variables, they are line, station\_name,
 The result dataset is 1868 rows by 19columns.
 
 These data are still untidy, the route number and route name variables are not clear for people to read.
+
+**2. Answer questions using the dataset.**
+
+``` r
+dist_transit_data = 
+  distinct(transit_data,station_name, .keep_all = TRUE)
+```
+
+-   How many distinct stations are there?
+
+There are 356 distinct stations in the dataset.
+
+-   How many stations are ADA compliant?
+
+57 stations are ADA compliant.
+
+-   What proportion of station entrances / exits without vending allow entrance?
+
+9.7965739 percent of station entrances / exits do not have vending allow entrance.

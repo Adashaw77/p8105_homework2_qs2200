@@ -28,3 +28,21 @@ The result dataset is `r nrow(transit_data)` rows by `r ncol(transit_data)`colum
 
 These data are still untidy, the route number and route name variables are not clear for people to read.
 
+**2. Answer questions using the dataset.**
+
+```{r problem 1.2}
+dist_transit_data = 
+  distinct(transit_data,station_name, .keep_all = TRUE)
+
+```
+* How many distinct stations are there?
+
+There are `r nrow(dist_transit_data)` distinct stations in the dataset.
+
+* How many stations are ADA compliant?
+
+`r sum(dist_transit_data$ada == TRUE)` stations are ADA compliant.
+
+* What proportion of station entrances / exits without vending allow entrance?
+
+`r sum(transit_data$vending == "NO")/length(transit_data$vending) * 100` percent of station entrances / exits do not have vending allow entrance.
