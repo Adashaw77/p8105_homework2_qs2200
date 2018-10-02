@@ -131,3 +131,16 @@ brfss = p8105.datasets::brfss_smart2010 %>%
   janitor::clean_names() %>%
   mutate(good_prop = (excellent + good)/(excellent + good +fair + poor))
 ```
+
+**2. How many unique locations are included in the dataset? Is every state represented? What state is observed the most? **
+
+``` r
+max_freq = as.data.frame(table(brfss$locationabbr))%>%
+  filter(Freq == max(Freq)) 
+```
+
+There are 404 unique locations in this dataset.
+
+There are 51 states included in this dataset, so every states in United States is represented.
+
+The state "NJ" is observed the most, appeared 146 times.

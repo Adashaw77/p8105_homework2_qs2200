@@ -126,3 +126,15 @@ brfss = p8105.datasets::brfss_smart2010 %>%
   mutate(good_prop = (excellent + good)/(excellent + good +fair + poor))
  
 ```
+
+**2. How many unique locations are included in the dataset? Is every state represented? What state is observed the most? **
+
+```{r problem 3.2}
+max_freq = as.data.frame(table(brfss$locationabbr))%>%
+  filter(Freq == max(Freq)) 
+```
+There are `r length(unique(brfss$locationdesc))` unique locations in this dataset.
+
+There are `r length(unique(brfss$locationabbr))` states included in this dataset, so every states in United States is represented.
+
+The state "`r max_freq$Var1`" is observed the most, appeared `r max_freq$Freq` times.
