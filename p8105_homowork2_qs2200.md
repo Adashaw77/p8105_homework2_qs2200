@@ -14,3 +14,11 @@ transit_data =
   mutate(entry = recode(entry, `YES` = "TRUE", `NO` = "FALSE")) %>%
   mutate(entry = as.logical(entry))
 ```
+
+**1. Describe the dataset.**
+
+This dataset `transit_data` contains 19 variables, they are line, station\_name, station\_latitude, station\_longitude, route1, route2, route3, route4, route5, route6, route7, route8, route9, route10, route11, entry, vending, entrance\_type, ada. At first I import the dataset, and clean it's name using the function`janitor::clean_names`, and select required columns, change the variable type of the entry variable.
+
+The result dataset is 1868 rows by 19columns.
+
+These data are still untidy, the route number and route name variables are not clear for people to read.
