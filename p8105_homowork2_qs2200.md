@@ -107,3 +107,11 @@ precip_data =
 The dataset `mr_trash_wheel` has 14 variables, and 201 observations of the dumbsters' trash.
 
 The dataset `precipitation_2016` and `precipitation_2017` separately include the precipitation data of 2016 and 2017 in each month. The combined dataset `precip_data` shows the precipitation every month in two years.
+
+**4. What was the total precipitation in 2017?**
+
+The total precipitation in 2017 is 29.93.
+
+**5. What was the median number of sports balls in a dumpster in 2016?**
+
+The median number of sports balls in a dumbster in 2016 is 13.
