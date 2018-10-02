@@ -66,3 +66,17 @@ There are 60 distinct stations serve the A train.
 -   Of the stations that serve the A train, how many are ADA compliant?
 
 Of all stations that serve the A train, 17 stations are ADA compliant.
+
+Problem 2
+=========
+
+**1. Read and clean the Mr. Trash Wheel sheet.**
+
+``` r
+library(cellranger)
+mr_trash_wheel = 
+  readxl::read_excel("./data/HealthyHarborWaterWheelTotals2017-9-26.xlsx", sheet = 1, range = cell_cols("A:N")) %>%
+  janitor::clean_names() %>%
+  na.omit(1) %>%
+  mutate(sports_balls = as.integer(sports_balls))
+```
