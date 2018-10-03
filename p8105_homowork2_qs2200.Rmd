@@ -22,11 +22,11 @@ transit_data =
 **1. Describe the dataset.**
 
 This dataset `transit_data` contains `r ncol(transit_data)` variables, they are `r names(transit_data)`.
-At first I import the dataset, and clean it's name using the function`janitor::clean_names`, and select required columns, change the variable type of the entry variable.
+At first I import the dataset, and clean it's name using the function`janitor::clean_names`, and select required columns, change the variable type of the entry variable to logical factor.
 
-The result dataset is `r nrow(transit_data)` rows by `r ncol(transit_data)`columns.
+The result dataset is `r nrow(transit_data)` rows by `r ncol(transit_data)` columns.
 
-These data are still untidy, the route number and route name variables are not clear for people to read.
+These data are still untidy, the route number and route name variables are not clear for people to read.The variables from 'route1' to 'route11' can be gathered, so that the route number and the route name are distinct variables, people can get required information from the dataset more easily.
 
 **2. Answer questions using the dataset.**
 
@@ -45,10 +45,10 @@ There are `r nrow(dist_transit_data)` distinct stations in the dataset.
 
 * What proportion of station entrances / exits without vending allow entrance?
 
-`r sum(transit_data$vending == "NO")/length(transit_data$vending) * 100` percent of station entrances / exits do not have vending allow entrance.
+`r sum(transit_data$vending == "NO" & transit_data$entry == TRUE)/sum(transit_data$vending == "NO") * 100` percent of station entrances / exits do not have vending allow entrance.
 
 **3. Reformat data.**
-```{r problem 1.3}
+```{r problem 1.3, message=FALSE}
 reformat_transit_data = transit_data %>%
   gather(key = route_number, value = route_name, route1:route11)
 
@@ -99,7 +99,7 @@ precip_data =
 
 **3. Write a paragraph about these data.**
 
-The dataset `mr_trash_wheel` has `r ncol(mr_trash_wheel)` variables, and `r nrow(mr_trash_wheel)` observations of the dumbsters' trash.
+The dataset `mr_trash_wheel` has `r ncol(mr_trash_wheel)` variables, and `r nrow(mr_trash_wheel)` observations of the dumbsters' trash after cleaning the data. It contains record about dumbster numbers, type of litter and observe time.
 
 The dataset `precipitation_2016` and `precipitation_2017` separately include the precipitation data of 2016 and 2017 in each month. The combined dataset `precip_data` shows the precipitation every month in two years.
 
@@ -108,8 +108,13 @@ The dataset `precipitation_2016` and `precipitation_2017` separately include the
 The total precipitation in 2017 is `r sum(precipitation_2017$total)`.
 
 **5. What was the median number of sports balls in a dumpster in 2016?**
+```{r problem 2.5}
+mr_trash_wheel_2016 = 
+  filter(mr_trash_wheel, year == "2016")
+  
 
-The median number of sports balls in a dumbster in 2016 is `r median(mr_trash_wheel$sports_balls)`.
+```
+The median number of sports balls in a dumbster in 2016 is `r median(mr_trash_wheel_2016$sports_balls)`.
 
 # Problem 3
 

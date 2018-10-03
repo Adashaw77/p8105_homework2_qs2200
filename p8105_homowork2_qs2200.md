@@ -17,11 +17,11 @@ transit_data =
 
 **1. Describe the dataset.**
 
-This dataset `transit_data` contains 19 variables, they are line, station\_name, station\_latitude, station\_longitude, route1, route2, route3, route4, route5, route6, route7, route8, route9, route10, route11, entry, vending, entrance\_type, ada. At first I import the dataset, and clean it's name using the function`janitor::clean_names`, and select required columns, change the variable type of the entry variable.
+This dataset `transit_data` contains 19 variables, they are line, station\_name, station\_latitude, station\_longitude, route1, route2, route3, route4, route5, route6, route7, route8, route9, route10, route11, entry, vending, entrance\_type, ada. At first I import the dataset, and clean it's name using the function`janitor::clean_names`, and select required columns, change the variable type of the entry variable to logical factor.
 
-The result dataset is 1868 rows by 19columns.
+The result dataset is 1868 rows by 19 columns.
 
-These data are still untidy, the route number and route name variables are not clear for people to read.
+These data are still untidy, the route number and route name variables are not clear for people to read.The variables from 'route1' to 'route11' can be gathered, so that the route number and the route name are distinct variables, people can get required information from the dataset more easily.
 
 **2. Answer questions using the dataset.**
 
@@ -40,7 +40,7 @@ There are 465 distinct stations in the dataset.
 
 -   What proportion of station entrances / exits without vending allow entrance?
 
-9.7965739 percent of station entrances / exits do not have vending allow entrance.
+37.704918 percent of station entrances / exits do not have vending allow entrance.
 
 **3. Reformat data.**
 
@@ -104,7 +104,7 @@ precip_data =
 
 **3. Write a paragraph about these data.**
 
-The dataset `mr_trash_wheel` has 14 variables, and 201 observations of the dumbsters' trash.
+The dataset `mr_trash_wheel` has 14 variables, and 201 observations of the dumbsters' trash after cleaning the data. It contains record about dumbster numbers, type of litter and observe time.
 
 The dataset `precipitation_2016` and `precipitation_2017` separately include the precipitation data of 2016 and 2017 in each month. The combined dataset `precip_data` shows the precipitation every month in two years.
 
@@ -114,7 +114,12 @@ The total precipitation in 2017 is 29.93.
 
 **5. What was the median number of sports balls in a dumpster in 2016?**
 
-The median number of sports balls in a dumbster in 2016 is 13.
+``` r
+mr_trash_wheel_2016 = 
+  filter(mr_trash_wheel, year == "2016")
+```
+
+The median number of sports balls in a dumbster in 2016 is 26.
 
 Problem 3
 =========
