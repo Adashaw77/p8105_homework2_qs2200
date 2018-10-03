@@ -48,12 +48,12 @@ There are `r nrow(dist_transit_data)` distinct stations in the dataset.
 `r sum(transit_data$vending == "NO" & transit_data$entry == TRUE)/sum(transit_data$vending == "NO") * 100` percent of station entrances / exits do not have vending allow entrance.
 
 **3. Reformat data.**
-```{r problem 1.3, message=FALSE}
+```{r problem 1.3, message =FALSE }
 reformat_transit_data = transit_data %>%
   gather(key = route_number, value = route_name, route1:route11)
 
 dis_refo_data = reformat_transit_data %>%
-  distinct(transit_data, station_name, line, .keep_all = TRUE)
+  distinct(station_name, line, .keep_all = TRUE)
 ```
 
 * How many distinct stations serve the A train? 

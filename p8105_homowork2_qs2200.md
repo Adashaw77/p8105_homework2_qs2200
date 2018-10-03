@@ -49,15 +49,8 @@ reformat_transit_data = transit_data %>%
   gather(key = route_number, value = route_name, route1:route11)
 
 dis_refo_data = reformat_transit_data %>%
-  distinct(transit_data, station_name, line, .keep_all = TRUE)
+  distinct(station_name, line, .keep_all = TRUE)
 ```
-
-    ## Warning: Trying to compute distinct() for variables not found in the data:
-    ## - `transit_data`
-    ## This is an error, but only a warning is raised for compatibility reasons.
-    ## The following variables will be used:
-    ## - station_name
-    ## - line
 
 -   How many distinct stations serve the A train?
 
