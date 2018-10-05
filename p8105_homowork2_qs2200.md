@@ -68,7 +68,7 @@ Problem 2
 ``` r
 library(cellranger)
 mr_trash_wheel = 
-  readxl::read_excel("./data/HealthyHarborWaterWheelTotals2017-9-26.xlsx", sheet = 1, range = cell_cols("A:N")) %>%
+  readxl::read_excel("./data/HealthyHarborWaterWheelTotals2018-7-28.xlsx", sheet = 1, range = cell_cols("A:N")) %>%
   janitor::clean_names() %>%
   na.omit(1) %>%
   mutate(sports_balls = as.integer(sports_balls))
@@ -78,13 +78,13 @@ mr_trash_wheel =
 
 ``` r
 precipitation_2016 = 
-  readxl::read_excel("./data/HealthyHarborWaterWheelTotals2017-9-26.xlsx", sheet = 4,  range = "A2:B14") %>%
+  readxl::read_excel("./data/HealthyHarborWaterWheelTotals2018-7-28.xlsx", sheet = 4,  range = "A2:B14") %>%
   janitor::clean_names() %>%
   na.omit(2) %>%
   mutate(year = "2016")
 
 precipitation_2017 = 
-  readxl::read_excel("./data/HealthyHarborWaterWheelTotals2017-9-26.xlsx", sheet = 3, range = "A2:B14") %>%
+  readxl::read_excel("./data/HealthyHarborWaterWheelTotals2018-7-28.xlsx", sheet = 3, range = "A2:B14") %>%
   janitor::clean_names() %>%
   na.omit(2) %>%
   mutate(year = "2017")
@@ -97,13 +97,13 @@ precip_data =
 
 **3. Write a paragraph about these data.**
 
-The dataset `mr_trash_wheel` has 14 variables, and 201 observations of the dumbsters' trash after cleaning the data. It contains record about dumbster numbers, type of litter and observe time.
+The dataset `mr_trash_wheel` has 14 variables, and 285 observations of the dumbsters' trash after cleaning the data. It contains record about dumbster numbers, type of litter and observe time.
 
 The dataset `precipitation_2016` and `precipitation_2017` separately include the precipitation data of 2016 and 2017 in each month. The combined dataset `precip_data` shows the precipitation every month in two years.
 
 **4. What was the total precipitation in 2017?**
 
-The total precipitation in 2017 is 29.93.
+The total precipitation in 2017 is 23.5.
 
 **5. What was the median number of sports balls in a dumpster in 2016?**
 
